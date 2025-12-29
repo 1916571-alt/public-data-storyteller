@@ -1,64 +1,64 @@
-# 🧠 The Hidden Cost of Connectivity: Remote Work & Mental Health (2024)
+# 🧠 연결의 숨겨진 비용: 원격 근무와 정신 건강 (2024)
 
-> **"Are we working from home, or living at work?"** 
-> This analysis dives into the mental health implications of modern work arrangements using data from late 2024.
-
----
-
-## 1. Introduction: Why This Matters
-In the post-pandemic era, "Remote Work" has shifted from a necessity to a standard. However, the initial euphoria of "no commute" is fading, revealing a complex landscape of mental health challenges. 
-
-This report analyzes a dataset of **5,000 employees** (updated Dec 2024) to uncover the hidden correlations between work location, virtual connectivity, and employee well-being.
-
-**Data Source**: [Impact of Remote Work on Mental Health (GitHub)](https://github.com/leslietavarez/remotework-mentalhealth)
+> **"우리는 집에서 일하는 것인가, 아니면 일터에서 살고 있는 것인가?"**
+> 이 분석은 2024년 말 데이터를 바탕으로 현대적 근무 형태가 정신 건강에 미치는 영향을 파헤칩니다.
 
 ---
 
-## 2. Hypotheses: Defining the Questions
-We set out to test three critical hypotheses:
-1.  **The "Isolation Tax"**: Remote workers experience significantly higher social isolation than their onsite counterparts.
-2.  **The "Zoom Fatigue" Effect**: A higher frequency of virtual meetings negatively impacts sleep quality.
-3.  **The Stress Paradox**: Employees with lower stress levels aren't necessarily the most productive; there is a complex trade-off in the hybrid model.
+## 1. 서론: 왜 이 주제인가?
+팬데믹 이후, "원격 근무(Remote Work)"는 선택이 아닌 표준으로 자리 잡았습니다. 그러나 "출퇴근 없는 삶"의 초기 환상은 사라지고, 정신 건강이라는 복잡한 과제가 드러나고 있습니다.
+
+이 리포트는 **5,000명의 직원 데이터**(2024년 12월 업데이트)를 분석하여 근무 장소, 가상 연결 빈도, 그리고 직원 웰빙 사이의 숨겨진 상관관계를 밝혀냅니다.
+
+**데이터 출처**: [Impact of Remote Work on Mental Health (GitHub)](https://github.com/leslietavarez/remotework-mentalhealth)
 
 ---
 
-## 3. Analysis & Findings
+## 2. 가설: 핵심 질문들
+우리는 다음 세 가지의 중요한 가설을 검증하고자 했습니다:
+1.  **고립세 (The Isolation Tax)**: 원격 근무자는 현장 출근자보다 훨씬 높은 수준의 사회적 고립감을 느낄 것이다.
+2.  **줌 피로 효과 (The Zoom Fatigue Effect)**: 화상 회의 빈도가 높을수록 수면의 질은 떨어진다.
+3.  **스트레스의 역설 (The Stress Paradox)**: 스트레스가 낮다고 반드시 생산성이 높은 것은 아니며, 하이브리드 모델에서 복잡한 상충 관계가 존재한다.
 
-### 📊 Finding 1: Location Matters for Stress
-Contrary to the belief that "Remote is Relaxing," our data shows a nuanced picture. While remote work eliminates the physical commute, it introduces new stressors.
+---
+
+## 3. 분석 및 발견 (Analysis & Findings)
+
+### 📊 발견 1: 근무 장소와 스트레스의 상관관계
+"원격 근무는 편안하다"는 통념과 달리, 데이터는 미묘한 현실을 보여줍니다. 출퇴근 전쟁은 사라졌지만, 새로운 스트레스 요인이 등장했기 때문입니다.
 
 ![Stress by Location](outputs/chart1_stress_by_location.png)
 
-*Observation*: As seen in the chart, stress levels are distributed across all modalities, but the distribution shifts. *Hybrid* models often show the most balanced stress profile, potentially offering the "best of both worlds."
+*관찰*: 차트에서 볼 수 있듯이 스트레스는 모든 근무 형태에서 나타나지만, 그 분포는 다릅니다. 특히 **하이브리드(Hybrid)** 모델이 종종 가장 균형 잡힌 스트레스 프로필을 보여주며, "두 세계의 장점"을 모두 취할 가능성을 시사합니다.
 
-### 🏠 Finding 2: The Cost of Isolation
-The most striking difference appears in **Social Isolation Ratings**.
+### 🏠 발견 2: 고립의 대가
+가장 극명한 차이는 **사회적 고립도(Social Isolation Ratings)**에서 나타납니다.
 
 ![Isolation by Location](outputs/chart2_isolation_by_location.png)
 
-*Insight*: Remote workers consistently report higher social isolation scores (closer to 4-5) compared to Onsite workers. This confirms the "Isolation Tax" hypothesis—without the "water cooler" moments, employees feel disconnected.
+*인사이트*: 원격 근무자(Remote)는 현장 근무자(Onsite)에 비해 일관되게 높은 사회적 고립 점수(4~5점대)를 기록했습니다. 이는 "고립세" 가설을 뒷받침합니다. 동료와의 가벼운 대화(Water cooler moment)가 사라진 곳에서 직원들은 단절감을 느낍니다.
 
-### 💤 Finding 3: Meetings vs. Sleep
-"Zoom Fatigue" is real and it follows you to bed.
+### 💤 발견 3: 회의와 수면의 전쟁
+"줌 피로(Zoom Fatigue)"는 실재하며, 침실까지 따라옵니다.
 
 ![Meetings vs Sleep](outputs/chart3_meetings_vs_sleep.png)
 
-*Insight*: There is a clear trend where employees reporting **"Poor" sleep quality** tend to have a higher average number of weekly virtual meetings. The mental load of constant connectivity appears to disrupt rest.
+*인사이트*: **"나쁨(Poor)" 수면 상태**를 보고한 직원들은 주간 화상 회의 횟수가 평균적으로 더 높은 경향이 뚜렷하게 나타납니다. 끊임없는 연결 상태가 주는 정신적 부하가 휴식을 방해하는 것으로 보입니다.
 
-### 🧩 Finding 4: The Mental Health Landscape
-A significant portion of the workforce reports specific conditions, typically Anxiety or Depression.
+### 🧩 발견 4: 정신 건강 현황
+상당수의 인력이 불안(Anxiety)이나 우울(Depression)과 같은 특정 상태를 보고하고 있습니다.
 
 ![Condition Distribution](outputs/chart4_condition_distribution.png)
 
 ---
 
-## 4. Conclusion & "So What?"
+## 4. 결론 및 제언: "So What?"
 
-### Key Takeaways
-1.  **Hybrid is the Sweet Spot**: It mitigates the isolation of remote work while retaining flexibility.
-2.  **Cap the Calls**: Organizations must limit virtual meetings. The correlation with poor sleep is a red flag for burnout.
-3.  **Intentional Connection**: For remote-first companies, "social isolation" is a systemic risk. Structural solutions (virtual coffees, offsites) are not optional perks but health necessities.
+### 핵심 시사점 (Key Takeaways)
+1.  **하이브리드가 답이다**: 원격 근무의 고립감을 완화하면서도 유연성을 유지하는 균형점입니다.
+2.  **회의에 상한선을 두라**: 조직 차원에서 화상 회의를 제한해야 합니다. 수면 부족과의 상관관계는 번아웃의 적신호입니다.
+3.  **의도적인 연결**: 원격 중심 기업에게 "사회적 고립"은 구조적인 위험 요소입니다. 가상 티타임이나 오프라인 모임 같은 구조적 해결책은 복지가 아니라 '건강 필수 요건'입니다.
 
-### 🚀 Business Recommendation
-**"Disconnect to Reconnect"**
-Companies should implement "No-Meeting Wednesdays" and mandatory "Offline Hours" to combat the sleep-depriving effects of hyper-connectivity. The data suggests that **well-rested employees are not just happier—they are sustainable.**
+### 🚀 비즈니스 제언
+**"연결을 끊어야 연결된다 (Disconnect to Reconnect)"**
+기업은 "회의 없는 수요일"이나 강제적인 "오프라인 시간"을 도입하여 초연결(Hyper-connectivity)이 주는 수면 박탈 효과와 싸워야 합니다. 데이터는 말합니다. **잘 쉬는 직원이 더 행복할 뿐만 아니라, 더 오래 함께 갈 수 있다(Sustainable)고.**
