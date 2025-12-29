@@ -1,10 +1,10 @@
-# 🤖 Autonomous Data Storyteller Agent (Powered by Google ADK)
+# 🤖 자율형 데이터 스토리텔링 에이전트 (Google ADK 기반)
 
-> **"From Raw Data to Business Insight — Fully Autonomous."**
+> **"원천 데이터에서 비즈니스 인사이트까지 — 완전 자율화된 분석."**
 
-This repository showcases the capabilities of an **Autonomous AI Agent** designed to perform end-to-end data analysis. Unlike traditional scripts, this agent autonomously discovers public datasets, formulates hypotheses, executes Python code for statistical verification, and generates professional insight reports.
+이 저장소는 **자율형 AI 에이전트**가 수행하는 End-to-End 데이터 분석 역량을 보여주는 포트폴리오입니다. 단순한 스크립트 실행을 넘어, 에이전트가 스스로 공공 데이터를 탐색하고, 가설을 수립하며, Python 코드를 작성해 통계적 검증을 수행하고, 전문적인 인사이트 리포트까지 작성하는 전 과정을 자동화했습니다.
 
-## 🛠 Tech Stack
+## 🛠 기술 스택 (Tech Stack)
 - **Core Engine**: Google Antigravity (Agent Development Kit)
 - **Data Analysis**: Python 3.12 (Pandas, NumPy, SciPy)
 - **Visualization**: Matplotlib, Seaborn
@@ -12,62 +12,62 @@ This repository showcases the capabilities of an **Autonomous AI Agent** designe
 
 ---
 
-## 📊 Latest Analysis: Remote Work & Mental Health (2024)
+## 📊 최신 분석: 원격 근무와 정신 건강 (2024)
 
-The agent recently conducted a deep-dive analysis into the correlation between remote work environments and employee well-being.
+에이전트는 최근 원격 근무 환경이 직원의 웰빙에 미치는 영향을 심층 분석했습니다.
 
-### 📌 6W1H Summary
-- **Who**: 5,000 employees across various global industries and demographics.
-- **When**: Data updated Dec 2024, Analyzed on Dec 30, 2025.
-- **Where**: [GitHub / Kaggle Public Dataset](projects/20251230_Remote_Work_Mental_Health/data/DATA_SOURCE.md)
-- **What**: Impact of work location (Remote/Hybrid/Onsite) and virtual meeting frequency on stress & sleep.
-- **Why**: To validate common myths about remote work (Isolation vs. Flexibility) and support data-driven HR policies.
-- **How**: 
-  - **Statistical Tests**: Pearson Correlation, Welch's T-Test.
-  - **Visualization**: Distribution plots & Heatmaps using Seaborn.
-- **Results**: [Read Full Report](projects/20251230_Remote_Work_Mental_Health/reports/insight_report.md)
+### 📌 6W1H 분석 요약
+- **Who (대상)**: 전 세계 다양한 산업군의 직원 5,000명.
+- **When (시기)**: 2024년 12월 데이터 업데이트, 2025년 12월 30일 분석 수행.
+- **Where (출처)**: [GitHub / Kaggle Public Dataset](projects/20251230_Remote_Work_Mental_Health/data/DATA_SOURCE.md)
+- **What (주제)**: 근무 형태(원격/하이브리드/출근)와 화상 회의 빈도가 스트레스 및 수면의 질에 미치는 영향.
+- **Why (목적)**: "원격 근무는 무조건 좋은가?"라는 통념(Myth)을 검증하고, 데이터 기반의 현명한 HR 정책 수립을 지원하기 위함.
+- **How (방법)**: 
+  - **통계 검증**: Pearson Correlation (상관분석), Welch's T-Test (집단 간 차이 검정).
+  - **시각화**: Seaborn을 활용한 분포도 및 히트맵 생성.
+- **Results (결과)**: [전체 리포트 읽기](projects/20251230_Remote_Work_Mental_Health/reports/insight_report.md)
 
-### 📈 Key Visualization
-*Does remote work effectively reduce stress? The data suggests a more complex reality.*
+### 📈 핵심 시각화
+*원격 근무가 정말로 스트레스를 줄여줄까요? 데이터는 더 복잡한 현실을 보여줍니다.*
 
 ![Stress by Location](projects/20251230_Remote_Work_Mental_Health/plots/chart1_stress_by_location.png)
 
 ---
 
-## 📂 Project Structure
+## 📂 프로젝트 구조 (Project Structure)
 
-Verified directory structure for the autonomous workflow:
+자율 에이전트 워크플로우를 위해 표준화된 폴더 구조를 사용합니다:
 
 ```text
 root/
-├── LICENSE
-├── README.md
+├── LICENSE                 # MIT 라이선스
+├── README.md               # 프로젝트 메인 설명 (Current)
 └── projects/
     └── 20251230_Remote_Work_Mental_Health/
         ├── data/
         │   ├── dataset.csv
-        │   └── DATA_SOURCE.md
+        │   └── DATA_SOURCE.md  # 데이터 출처 및 윤리 규정
         ├── plots/
         │   ├── chart1_stress_by_location.png
-        │   └── ... (5 charts total)
+        │   └── ... (총 5개 차트)
         ├── reports/
-        │   └── insight_report.md   # Final 6W1H Report
+        │   └── insight_report.md   # 최종 6W1H 분석 리포트
         └── scripts/
-            ├── analyze_data.py     # EDA
-            ├── advanced_analysis.py # Statistical Tests
-            └── generate_plots.py   # Visualization
+            ├── analyze_data.py     # EDA (탐색적 데이터 분석)
+            ├── advanced_analysis.py # 통계적 가설 검증
+            └── generate_plots.py   # 시각화 생성 스크립트
 ```
 
 ---
 
-## 🚀 Future Roadmap
+## 🚀 향후 로드맵 (Future Roadmap)
 
-I am continuously evolving. The next phase of this portfolio includes:
+이 프로젝트는 계속 진화하고 있습니다. 다음 단계의 고도화 계획은 다음과 같습니다:
 
-- [ ] **Automated Pipelines**: Integration with **n8n** or **GitHub Actions** for scheduled weekly trend analysis.
-- [ ] **Real-Time Data**: Connecting to **BigQuery** via MCP (Model Context Protocol) for live SQL analysis.
-- [ ] **Interactive Dashboards**: Deploying results via **Streamlit** for user-friendly exploration.
-- [ ] **Multi-Agent Systems**: Implementing an "Analyst-Reviewer" architecture where one agent writes code and another validates logical integrity.
+- [ ] **분석 자동화 (Automated Pipelines)**: **n8n** 또는 **GitHub Actions**를 연동하여 주간 트렌드 분석 자동화.
+- [ ] **실시간 데이터 연동**: MCP (Model Context Protocol)를 활용해 **BigQuery/SQL** 데이터베이스 실시간 분석.
+- [ ] **인터랙티브 대시보드**: **Streamlit**을 활용하여 정적 리포트를 넘어선 반응형 웹 리포트 배포.
+- [ ] **멀티 에이전트 시스템 (Multi-Agent Systems)**: '분석가 에이전트'와 '검수자 에이전트'가 협업하여 코드와 논리의 결함을 교차 검증하는 시스템 구축.
 
 ---
 
