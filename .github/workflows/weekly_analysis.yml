@@ -31,7 +31,7 @@ jobs:
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       run: |
-        python scripts/weekly_mission.py
+        python scripts/analyze_data.py
 
     - name: Commit and Push Results
       run: |
