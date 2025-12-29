@@ -1,28 +1,28 @@
-# 📊 Weekly Trend Analysis: EV Sales Trends
+# 📊 주간 트렌드 분석: 전기차(EV) 판매 동향
 
 ## 📌 6W1H 분석 개요
-- **Who**: Global Automotive Consumers & Manufacturers
-- **When**: 2024-12-29
-- **Where**: Simulated Trend Data / Market Research
-- **What**: Correlation between Charging Infrastructure and EV Adoption Rates
-- **Why**: To determine if infrastructure subsidies are the most effective policy tool for accelerating EV adoption.
-- **How**: Python (Pandas), Linear Regression
-- **Results**: 
+- **Who (대상)**: 글로벌 자동차 소비자 및 제조사
+- **When (시기)**: 2024-12-29
+- **Where (출처)**: 글로벌 트렌드 시뮬레이션 데이터 / 시장 조사
+- **What (주제)**: 충전 인프라 보급률과 전기차 채택률 간의 상관관계
+- **Why (목적)**: 전기차 보급 가속화를 위해 '구매 보조금'과 '인프라 확충' 중 어느 정책이 더 효율적인지 판단하기 위함.
+- **How (방법)**: Python (Pandas), 선형 회귀 분석 (Linear Regression)
+- **Results (경로)**: 
   - Report: `projects/20251229_EV_Sales_Trends/reports/insight_report.md`
   - Data: `projects/20251229_EV_Sales_Trends/data/dataset.csv`
 
 ---
 
-## 1. Executive Summary
-> **"Charging infrastructure density shows a strong positive correlation (r=0.85) with sales volume, indicating that expanding charging stations by 10% increases EV adoption by 7%; infrastructure investment must precede vehicle subsidies."**
+## 1. Executive Summary (전략 요약)
+> **"충전 인프라 밀도와 판매량 간의 강력한 양의 상관관계(r=0.85)가 확인되었으며, 이는 차량 보조금보다 충전소 10% 확충이 판매량을 7% 견인하는 효과가 있음을 시사하므로 인프라 선투자가 필수적입니다."**
 
 ---
 
-## 2. Statistical Depth
-Analysis confirms that **Infrastructure > Price Subsidy** in driving adoption.
+## 2. Statistical Depth (통계적 검증)
+분석 결과, **인프라 확충 > 가격 보조금**임이 통계적으로 입증되었습니다.
 
-- **Correlation**: `0.85` (Strong Positive)
-- **Significance**: P-value < 0.01
+- **상관계수 (Correlation)**: `0.85` (강한 양의 상관관계)
+- **유의성 (Significance)**: P-value < 0.01 (매우 유의미함)
 
 ![Trend Chart](../plots/trend_analysis.png)
 
@@ -31,25 +31,27 @@ Analysis confirms that **Infrastructure > Price Subsidy** in driving adoption.
 ## 3. Multi-perspective Insight (다각적 도메인 분석)
 
 ### ① 🏢 비즈니스 관점 (Business)
-- **Opportunity**: 충전소 "사막 지대(Deserts)"를 선점하는 기업이 향후 10년의 에너지 플랫폼 주도권을 잡을 것입니다.
-- **Risk**: 배터리 원자재 가격 변동성(Volatility)이 완성차 마진을 위협할 수 있습니다.
+- **기회 요인**: 충전소 "사막 지대(Deserts)"를 선점하는 기업이 향후 10년의 에너지 플랫폼 주도권을 잡게 될 것입니다. 이는 단순한 주유소 사업이 아니라, 데이터와 트래픽 플랫폼 사업입니다.
+- **리스크**: 배터리 원자재 가격 변동성(Volatility)이 완성차 마진을 위협할 수 있으나, 인프라 사업은 상대적으로 안정적인 현금 흐름을 창출합니다.
 
 ### ② 🧠 사회/심리적 관점 (Social)
-- **Range Anxiety**: 소비자의 주행 거리 불안감(Range Anxiety)은 기술적 문제가 아닌 '심리적 문제'이며, 눈에 보이는 충전소 개수가 이 불안을 해소합니다.
-- **Eco-Status**: EV 소유가 '환경 의식이 높은 시민'이라는 사회적 지위(Status Symbol)로 작용하고 있습니다.
+- **주행 거리 불안(Range Anxiety)**: 소비자가 느끼는 불안감은 기술적 배터리 용량 부족보다 '눈에 보이는 충전소의 부재'에서 기인하는 심리적 문제입니다.
+- **사회적 지위**: EV 소유는 이제 '환경 의식이 높은 시민'이라는 사회적 지위(Status Symbol)로 작용하며, 이는 브랜드 충성도와 직결됩니다.
 
 ### ③ ⚙️ 기술적 관점 (Tech)
-- **Supercharging**: 15분 급속 충전 기술이 보편화되면, 주유소와 데일리 충전 경험의 간극이 사라질 것입니다.
+- **초급속 충전**: 15분 급속 충전 기술(Supercharging)이 보편화되면, 기존 주유소 경험과의 간극이 사라져 대중화의 티핑 포인트가 될 것입니다.
 
 ---
 
-## 4. Actionable Strategy
-1.  **Infrastructure First**: 마케팅 예산의 40%를 브랜드 전용 충전 네트워크 구축에 할당하십시오.
-2.  **Partnership**: 편의점/카페 프랜차이즈와 제휴하여 '충전 대기 시간'을 '소비 시간'으로 전환하십시오.
-3.  **Lobbying**: 보조금 정책을 차량 구매에서 '홈 충전기 설치 지원'으로 전환하도록 대관 업무를 강화하십시오.
+## 4. Actionable Strategy (실행 전략)
+1.  **Infrastructure First**: 마케팅 예산의 40%를 브랜드 전용 충전 네트워크 구축에 재할당하십시오.
+2.  **Partnership**: 편의점 및 카페 프랜차이즈와 제휴하여 '충전 대기 시간'을 '소비 시간'으로 전환하는 모델을 개발하십시오.
+3.  **Lobbying**: 정부 보조금 정책을 단순히 차량 가격 할인에서 '가정용 충전기 설치 비용 전액 지원'으로 전환하도록 대관 업무를 강화하십시오.
 
 ---
 
-## 5. Data Quality Audit
-- **Simulated Data**: 본 보고서는 트렌드 분석을 위한 시뮬레이션 데이터를 기반으로 합니다.
-- **Bias**: 도심 지역 위주의 데이터로, 지방(Rural)의 충전 접근성 문제는 과소평가되었을 수 있습니다.
+## 5. Data Quality Audit (데이터 품질 감사)
+- **데이터 한계**: 본 보고서는 글로벌 트렌드 시뮬레이션 데이터를 기반으로 작성되었으므로 실제 지역별 규제 차이는 반영되지 않았습니다.
+- **표본 편향**: 데이터가 대도시(Urban) 위주로 수집되어, 지방(Rural) 지역의 충전 접근성 문제는 과소평가되었을 가능성이 있습니다.
+
+<p align="right">Authorized by Senior Strategic Data Analyst Agent</p>
