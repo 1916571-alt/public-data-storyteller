@@ -1,0 +1,42 @@
+name: Weekly Trend Analysis
+
+on:
+  schedule:
+    # Every Monday at 9:00 AM KST (00:00 UTC)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze_and_report:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Autonomous Analysis Agent
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      run: |
+        python scripts/weekly_mission.py
+
+    - name: Commit and Push Results
+      run: |
+        git config --global user.name "DataStorytellerBot"
+        git config --global user.email "bot@datastoryteller.com"
+        git add projects/
+        git commit -m "chore: upload weekly analysis report [skip ci]" || echo "No changes to commit"
+        git push
