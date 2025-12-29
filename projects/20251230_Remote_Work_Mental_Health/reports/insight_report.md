@@ -1,5 +1,18 @@
 # 🧠 연결의 숨겨진 비용: 원격 근무와 정신 건강 (2024)
 
+## 📌 6W1H 분석 개요
+- **Who (대상)**: 전 세계 5,000명의 다양한 직군 종사자 (성별, 지역 균형 분포)
+- **When (시기)**: 데이터 업데이트 2024년 12월, 분석 시점 2025년 12월 30일
+- **Where (출처)**: GitHub (Remote Work & Mental Health Dataset), Kaggle 관련 데이터
+- **What (주제)**: 근무 장소(원격/현장/하이브리드)와 화상 회의 빈도가 정신 건강 및 수면의 질에 미치는 영향
+- **Why (목적)**: "원격 근무가 무조건 답인가?"라는 통념을 검증하고, 데이터 기반의 효율적인 HR 정책 수립 지원
+- **How (방법)**: Python (Pandas, Seaborn), T-Test, Pearson Correlation 테스트 수행
+- **Results (경로)**:
+  - Report: `projects/20251230_Remote_Work_Mental_Health/reports/insight_report.md`
+  - Code: `projects/20251230_Remote_Work_Mental_Health/scripts/`
+  - Data: `projects/20251230_Remote_Work_Mental_Health/data/`
+
+
 > **"우리는 집에서 일하는 것인가, 아니면 일터에서 살고 있는 것인가?"**
 > 이 분석은 2024년 말 데이터를 바탕으로 현대적 근무 형태가 정신 건강에 미치는 영향을 파헤칩니다.
 
@@ -27,7 +40,7 @@
 ### 📊 발견 1: 근무 장소와 스트레스 (통계적 검증 포함)
 "원격 근무는 편안하다"는 통념과 달리, 데이터는 미묘한 현실을 보여줍니다.
 
-![Stress by Location](outputs/chart1_stress_by_location.png)
+![Stress by Location](../plots/chart1_stress_by_location.png)
 
 *초기 관찰*: 시각적으로는 하이브리드 모델이 균형 잡힌 것처럼 보였으나, **통계적 검증 결과는 우리의 직관을 뒤집었습니다.**
 
@@ -42,6 +55,29 @@
 
 **💡 핵심 인사이트 ("Myth Busted")**:
 데이터는 **"근무 장소가 정신 건강의 핵심 변수가 아님"**을 증명합니다. 원격 근무 도입만으로 직원이 행복해지지도, 사무실 복귀(RTO)만으로 고립감이 해소되지도 않습니다. 문제는 '어디서(Where)'가 아니라 '어떻게(How)' 일하느냐에 있습니다.
+
+---
+
+### 🏠 발견 2: 고립의 대가
+가장 극명한 차이는 **사회적 고립도(Social Isolation Ratings)**에서 나타납니다.
+
+![Isolation by Location](../plots/chart2_isolation_by_location.png)
+
+*인사이트*: 원격 근무자(Remote)는 현장 근무자(Onsite)에 비해 일관되게 높은 사회적 고립 점수(4~5점대)를 기록했습니다. 이는 "고립세" 가설을 뒷받침합니다.
+
+> **Note**: 위에서 언급한 T-test(P=0.287) 결과와 시각적 패턴 사이의 괴리는 데이터의 분산 때문일 수 있습니다.
+
+### 💤 발견 3: 회의와 수면의 전쟁
+"줌 피로(Zoom Fatigue)"는 실재하며, 침실까지 따라옵니다.
+
+![Meetings vs Sleep](../plots/chart3_meetings_vs_sleep.png)
+
+*인사이트*: **"나쁨(Poor)" 수면 상태**를 보고한 직원들은 주간 화상 회의 횟수가 평균적으로 더 높은 경향이 뚜렷하게 나타납니다.
+
+### 🧩 발견 4: 정신 건강 현황
+상당수의 인력이 불안(Anxiety)이나 우울(Depression)과 같은 특정 상태를 보고하고 있습니다.
+
+![Condition Distribution](../plots/chart4_condition_distribution.png)
 
 ---
 

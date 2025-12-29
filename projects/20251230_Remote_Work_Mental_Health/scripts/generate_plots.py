@@ -25,7 +25,7 @@ plt.xlabel('Work Location')
 plt.ylabel('Count')
 plt.legend(title='Stress Level')
 plt.tight_layout()
-plt.savefig('outputs/chart1_stress_by_location.png')
+plt.savefig('../plots/chart1_stress_by_location.png')
 plt.close()
 
 # --- Chart 2: Social Isolation by Work Location ---
@@ -35,7 +35,7 @@ plt.title('Social Isolation Rating by Work Location', fontsize=16, fontweight='b
 plt.xlabel('Work Location')
 plt.ylabel('Social Isolation Rating (1-5)')
 plt.tight_layout()
-plt.savefig('outputs/chart2_isolation_by_location.png')
+plt.savefig('../plots/chart2_isolation_by_location.png')
 plt.close()
 
 # --- Chart 3: Virtual Meetings vs Sleep Quality ---
@@ -45,7 +45,7 @@ plt.title('Impact of Virtual Meetings on Sleep Quality', fontsize=16, fontweight
 plt.xlabel('Sleep Quality')
 plt.ylabel('Number of Virtual Meetings / Week')
 plt.tight_layout()
-plt.savefig('outputs/chart3_meetings_vs_sleep.png')
+plt.savefig('../plots/chart3_meetings_vs_sleep.png')
 plt.close()
 
 # --- Chart 4: Mental Health Condition Distribution (Pie) ---
