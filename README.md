@@ -31,6 +31,19 @@
 
 ---
 
+<!-- DASHBOARD_START -->
+
+## 📚 Analysis Archive (프로젝트 대시보드)
+
+에이전트가 수행한 역대 분석 프로젝트의 요약입니다.
+
+| 분석 날짜      | 도메인/주제                                   | 핵심 인사이트 (비즈니스+사회적 관점)                           | 리포트 바로가기                                                                      |
+|:-----------|:-----------------------------------------|:------------------------------------------------|:------------------------------------------------------------------------------|
+| 2025-12-30 | 🧠 연결의 숨겨진 비용: 원격 근무와 정신 건강 (2024)        | 어디서(Where) 일하느냐는 중요하지 않다. 어떻게(How) 연결되느냐가 핵심이다. | [👉 읽기](projects/20251230_Remote_Work_Mental_Health/reports/insight_report.md) |
+| 2025-12-29 | 🧠 Weekly Trend Analysis: EV Sales Trends | 본문 참조                                           | [👉 읽기](projects/20251229_EV_Sales_Trends/reports/insight_report.md)           |
+
+<!-- DASHBOARD_END -->
+
 ## 📂 프로젝트 구조 (Standardized Architecture)
 
 ```text

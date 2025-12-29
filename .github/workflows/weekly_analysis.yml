@@ -35,7 +35,7 @@ jobs:
     
     - name: Update README Dashboard
       run: |
-        python scripts/update_readme.py
+        python scripts/update_dashboard.py
 
     - name: Commit and Push Results
       run: |

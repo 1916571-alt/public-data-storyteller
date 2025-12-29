@@ -55,7 +55,7 @@ def run_mission():
     
     top_segment = df.loc[df['Value'].idxmax()]['Category']
     
-    report_content = f"""# 📊 {topic}: Deep Dive Analysis
+    report_content = f"""# 📊 {topic} (2025 Analysis)
 
 ## 📌 6W1H 분석 개요
 - **Who (대상)**: Global Market Segments
@@ -71,7 +71,7 @@ def run_mission():
 ---
 
 ## 1. Executive Summary
-> **"{topic} appears to be driven significantly by {top_segment}, suggesting a shift in market priorities."**
+> **"{topic} appears to be driven significantly by {top_segment}, suggesting a strong shift in market priorities toward efficiency."**
 
 ---
 
