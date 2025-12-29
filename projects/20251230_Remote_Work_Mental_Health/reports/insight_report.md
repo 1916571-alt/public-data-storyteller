@@ -3,7 +3,12 @@
 ## 📌 6W1H 분석 개요
 - **Who (대상)**: 전 세계 5,000명의 다양한 직군 종사자 (성별, 지역 균형 분포)
 - **When (시기)**: 2024년 12월 데이터 업데이트, 2025년 12월 30일 심층 분석 수행
-- **Where (출처)**: [Leslie Tavarez Repository](https://github.com/leslietavarez/remotework-mentalhealth)
+- **Where (출처)**: [Remote Work & Mental Health - GitHub](https://github.com/leslietavarez/remotework-mentalhealth)
+- **Metadata**:
+  - **Dataset**: Impact of Remote Work on Mental Health
+  - **Publisher**: Leslie Tavarez
+  - **License**: MIT License
+  - **Last Updated**: 2024 (Simulated)
 - **What (주제)**: 근무 형태가 직원의 스트레스 및 이직 의도(잠재)에 미치는 통계적 영향력
 - **Why (목적)**: "원격 근무가 복지다"라는 단순 가설을 넘어, 실제 HR 비용 절감을 위한 최적의 근무 모델 도출
 - **How (방법)**: Python SciPy (Welch's T-Test, Pearson Correlation), Seaborn Visualization
