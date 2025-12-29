@@ -2,72 +2,57 @@
 
 > **"원천 데이터에서 비즈니스 인사이트까지 — 완전 자율화된 분석."**
 
-이 저장소는 **자율형 AI 에이전트**가 수행하는 End-to-End 데이터 분석 역량을 보여주는 포트폴리오입니다. 단순한 스크립트 실행을 넘어, 에이전트가 스스로 공공 데이터를 탐색하고, 가설을 수립하며, Python 코드를 작성해 통계적 검증을 수행하고, 전문적인 인사이트 리포트까지 작성하는 전 과정을 자동화했습니다.
+이 저장소는 **자율형 AI 에이전트**가 수행하는 End-to-End 데이터 분석 역량을 보여주는 포트폴리오입니다. 단순한 시각화를 넘어, 에이전트가 통계적 유의성을 검증하고, 비즈니스 전략을 제안하는 **'의사결정 파트너(Decision Partner)'**로서 작동합니다.
 
 ## 🛠 기술 스택 (Tech Stack)
 - **Core Engine**: Google Antigravity (Agent Development Kit)
-- **Data Analysis**: Python 3.12 (Pandas, NumPy, SciPy)
-- **Visualization**: Matplotlib, Seaborn
-- **Infrastructure**: GitHub CLI, Git
+- **Data Analysis**: Python 3.12 (Pandas, SciPy, NumPy)
+- **Visualization**: Seaborn, Matplotlib
+- **Automation**: GitHub Actions (Weekly Pipeline)
 
 ---
 
-## 📊 최신 분석: 원격 근무와 정신 건강 (2024)
+## 📊 최신 분석: 원격 근무와 정신 건강 (Deep Dive)
 
-에이전트는 최근 원격 근무 환경이 직원의 웰빙에 미치는 영향을 심층 분석했습니다.
+**"직관에 의존하지 않고, 데이터로 검증합니다."**
+단순 평균 비교가 아닌, T-Test와 상관분석을 통해 날카로운 인사이트를 도출했습니다.
 
-### 📌 6W1H 분석 요약
-- **Who (대상)**: 전 세계 다양한 산업군의 직원 5,000명.
-- **When (시기)**: 2024년 12월 데이터 업데이트, 2025년 12월 30일 분석 수행.
-- **Where (출처)**: [GitHub / Kaggle Public Dataset](projects/20251230_Remote_Work_Mental_Health/data/DATA_SOURCE.md)
-- **What (주제)**: 근무 형태(원격/하이브리드/출근)와 화상 회의 빈도가 스트레스 및 수면의 질에 미치는 영향.
-- **Why (목적)**: "원격 근무는 무조건 좋은가?"라는 통념(Myth)을 검증하고, 데이터 기반의 현명한 HR 정책 수립을 지원하기 위함.
-- **How (방법)**: 
-  - **통계 검증**: Pearson Correlation (상관분석), Welch's T-Test (집단 간 차이 검정).
-  - **시각화**: Seaborn을 활용한 분포도 및 히트맵 생성.
-- **Results (결과)**: [전체 리포트 읽기](projects/20251230_Remote_Work_Mental_Health/reports/insight_report.md)
+### 💡 핵심 인사이트 (Key Insights)
+1.  **장소는 죄가 없다 (P-value > 0.05)**: 원격 근무와 현장 근무 간 스트레스 차이는 통계적으로 유의미하지 않았습니다. 즉, '재택근무=복지'라는 공식은 틀렸을 가능성이 높습니다.
+2.  **보이지 않는 비용, '고립세'**: 원격 근무자는 높은 확률로 사회적 고립감을 호소했습니다. 이는 장기적으로 이직 비용(Retention Cost)을 증가시키는 잠재 리스크입니다.
+3.  **데이터의 한계 지적**: 분석된 데이터가 보여주는 패턴의 인위성을 감지하고, 실제 비즈니스 적용 시 교란 변수(가사 노동, 직무 자율성)를 고려해야 함을 경고했습니다.
 
-### 📈 핵심 시각화
-*원격 근무가 정말로 스트레스를 줄여줄까요? 데이터는 더 복잡한 현실을 보여줍니다.*
+### 📈 대표 시각화
+*하이브리드 근무가 정답일까요? 데이터 분포를 통해 검증합니다.*
 
 ![Stress by Location](projects/20251230_Remote_Work_Mental_Health/plots/chart1_stress_by_location.png)
 
+👉 [👉 전문 분석 리포트 보러가기 (인사이트 포함)](projects/20251230_Remote_Work_Mental_Health/reports/insight_report.md)
+
 ---
 
-## 📂 프로젝트 구조 (Project Structure)
-
-자율 에이전트 워크플로우를 위해 표준화된 폴더 구조를 사용합니다:
+## 📂 프로젝트 구조 (Standardized Architecture)
 
 ```text
 root/
-├── LICENSE                 # MIT 라이선스
-├── README.md               # 프로젝트 메인 설명 (Current)
-└── projects/
-    └── 20251230_Remote_Work_Mental_Health/
-        ├── data/
-        │   ├── dataset.csv
-        │   └── DATA_SOURCE.md  # 데이터 출처 및 윤리 규정
-        ├── plots/
-        │   ├── chart1_stress_by_location.png
-        │   └── ... (총 5개 차트)
-        ├── reports/
-        │   └── insight_report.md   # 최종 6W1H 분석 리포트
-        └── scripts/
-            ├── analyze_data.py     # EDA (탐색적 데이터 분석)
-            ├── advanced_analysis.py # 통계적 가설 검증
-            └── generate_plots.py   # 시각화 생성 스크립트
+├── .github/workflows/      # 주간 자동 분석 파이프라인
+├── projects/
+│   ├── 20251230_Remote_Work_Mental_Health/
+│   │   ├── reports/insight_report.md  # 6W1H 전문 리포트
+│   │   ├── scripts/advanced_analysis.py # 통계 검증 코드
+│   │   └── data/DATA_SOURCE.md        # 데이터 윤리 선언
+│   └── 20251229_EV_Sales_Trends/      # (New) 주간 자동 분석 결과물
+└── scripts/
+    └── analyze_data.py     # 에이전트 자동화 스크립트
 ```
 
 ---
 
-## 🚀 향후 로드맵 (Future Roadmap)
+## 🚀 향후 로드맵 (Evolution)
 
-이 프로젝트는 계속 진화하고 있습니다. 다음 단계의 고도화 계획은 다음과 같습니다:
-
-- [ ] **분석 자동화 (Automated Pipelines)**: **n8n** 또는 **GitHub Actions**를 연동하여 주간 트렌드 분석 자동화.
-- [ ] **실시간 데이터 연동**: MCP (Model Context Protocol)를 활용해 **BigQuery/SQL** 데이터베이스 실시간 분석.
-- [ ] **인터랙티브 대시보드**: **Streamlit**을 활용하여 정적 리포트를 넘어선 반응형 웹 리포트 배포.
-- [ ] **멀티 에이전트 시스템 (Multi-Agent Systems)**: '분석가 에이전트'와 '검수자 에이전트'가 협업하여 코드와 논리의 결함을 교차 검증하는 시스템 구축.
+- [x] **자동화 파이프라인**: GitHub Actions를 통한 주간 트렌드 분석 (완료).
+- [ ] **SQL 데이터베이스 연동**: MCP를 활용한 BigQuery 실시간 쿼리 및 대시보드화.
+- [ ] **A/B 테스트 시뮬레이션**: 정책 제안에 따른 기대 효과를 예측하는 몬테카를로 시뮬레이션 도입.
 
 ---
 
