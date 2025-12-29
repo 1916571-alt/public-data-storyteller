@@ -12,25 +12,35 @@ def parse_report_for_dashboard(report_path):
     with open(report_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Extract Topic (from Title)
+    # Extract Topic
     title_match = re.search(r'^#\s+(.+)', content, re.MULTILINE)
-    topic = title_match.group(1).strip() if title_match else "Untitled Analysis"
+    topic = title_match.group(1).strip() if title_match else "무제"
     
-    # Extract Key Insight (Business/Social)
-    # Looking for the blockquote in Executive Summary or specific key insight text
-    # Prioritizing the blockquote format: > **"Insight"**
+    # Extract Key Insight
     insight_match = re.search(r'>\s*\*\*"(.*?)"\*\*', content)
+    insight = insight_match.group(1).strip() if insight_match else "리포트 참조"
     
-    if insight_match:
-        insight = insight_match.group(1).strip()
+    # Extract Source with Link
+    # Searching for: - **Where (출처)**: [Name](URL) or just text
+    source_match = re.search(r'-\s*\*\*Where \(출처\)\*\*:\s*(.+)', content)
+    if source_match:
+        source_raw = source_match.group(1).strip()
+        # Check if it's already a link format [Name](URL)
+        if "[" in source_raw and "]" in source_raw and "(" in source_raw:
+            source = source_raw # Keep the markdown link
+        else:
+            # If plain text, try to link it if it looks like a URL, otherwise keep text
+            if source_raw.startswith("http"):
+                source = f"[Link]({source_raw})"
+            else:
+                source = source_raw
     else:
-        # Fallback: Try to find a bullet point under "Key Insights"
-        fallback_match = re.search(r'\d\.\s*\*\*(.*?)\*\*:', content)
-        insight = fallback_match.group(1).strip() if fallback_match else "본문 참조"
+        source = "확인 불가"
 
     return {
         "topic": topic,
-        "insight": insight
+        "insight": insight,
+        "source": source
     }
 
 def update_dashboard():
@@ -38,13 +48,11 @@ def update_dashboard():
     dashboard_data = []
     
     if os.path.exists(projects_dir):
-        # Sort folders by date (newest first)
         for folder_name in sorted(os.listdir(projects_dir), reverse=True):
             project_path = os.path.join(projects_dir, folder_name)
             if not os.path.isdir(project_path):
                 continue
             
-            # Parse Date from folder name
             date_match = re.match(r'^(\d{8})_', folder_name)
             if not date_match:
                 continue
@@ -52,30 +60,30 @@ def update_dashboard():
             date_str = date_match.group(1)
             date_formatted = f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
             
-            # Find report
             report_path = os.path.join(project_path, "reports", "insight_report.md")
             metadata = parse_report_for_dashboard(report_path)
             
             if metadata:
-                # Relative link for GitHub
                 report_link = f"projects/{folder_name}/reports/insight_report.md"
                 
                 dashboard_data.append({
                     "분석 날짜": date_formatted,
                     "도메인/주제": metadata['topic'],
+                    "데이터 소스": metadata['source'],
                     "핵심 인사이트 (비즈니스+사회적 관점)": metadata['insight'],
-                    "리포트 바로가기": f"[👉 읽기]({report_link})"
+                    "리포트": f"[👉 읽기]({report_link})"
                 })
     
     if not dashboard_data:
-        print("No reports found to update dashboard.")
         return
 
     # Create Markdown Table
     df = pd.DataFrame(dashboard_data)
+    # Order columns
+    df = df[['분석 날짜', '도메인/주제', '데이터 소스', '핵심 인사이트 (비즈니스+사회적 관점)', '리포트']]
+    
     markdown_table = df.to_markdown(index=False)
     
-    # Update README
     readme_path = "README.md"
     with open(readme_path, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -92,9 +100,7 @@ def update_dashboard():
         new_content = pattern.sub(new_section, content)
         with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(new_content)
-        print("✅ README Dashboard updated successfully.")
-    else:
-        print("❌ Dashboard markers not found in README.md")
+        print("✅ README Dashboard updated with Source column.")
 
 if __name__ == "__main__":
     update_dashboard()

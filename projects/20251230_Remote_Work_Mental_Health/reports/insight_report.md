@@ -3,7 +3,7 @@
 ## 📌 6W1H 분석 개요
 - **Who (대상)**: 전 세계 5,000명의 다양한 직군 종사자 (성별, 지역 균형 분포)
 - **When (시기)**: 2024년 12월 데이터 업데이트, 2025년 12월 30일 심층 분석 수행
-- **Where (출처)**: [GitHub Public Dataset](https://github.com/leslietavarez/remotework-mentalhealth)
+- **Where (출처)**: [Leslie Tavarez Repository](https://github.com/leslietavarez/remotework-mentalhealth)
 - **What (주제)**: 근무 형태가 직원의 스트레스 및 이직 의도(잠재)에 미치는 통계적 영향력
 - **Why (목적)**: "원격 근무가 복지다"라는 단순 가설을 넘어, 실제 HR 비용 절감을 위한 최적의 근무 모델 도출
 - **How (방법)**: Python SciPy (Welch's T-Test, Pearson Correlation), Seaborn Visualization
@@ -82,5 +82,14 @@
 - **기대 효과**: 데이터상 확인된 수면 장애 리스크를 줄이고, 인지 부하(Cognitive Load)를 낮춰 업무 집중도를 15% 이상 향상시킬 수 있습니다.
 
 ---
+
+## 5. Data Quality Audit & Ethics (품질 및 윤리 감사)
+- **Source Integrity**: 원본 데이터는 GitHub에서 제공된 공공 데이터셋을 사용했습니다.
+- **Limitation**: 합성 데이터의 특성상 실제 근로 환경의 미묘한 뉘앙스를 모두 반영하지 못할 수 있습니다.
+- **기간 한계**: 스냅샷 데이터이므로 시계열적 제약이 존재합니다.
+
+## References
+1. Tavarez, L. (2024). *Impact of Remote Work on Mental Health*. GitHub Repository. Retrieved from https://github.com/leslietavarez/remotework-mentalhealth
+2. Google Antigravity Agent. (2025). *Strategic Insight Report: Remote Work*.
 
 > **Final Note**: 본 리포트는 5,000건의 데이터를 기반으로 작성되었으며, 귀사의 실제 HR 데이터와 결합(Feature Engineering)했을 때 가장 강력한 예측 모델이 될 수 있습니다.
