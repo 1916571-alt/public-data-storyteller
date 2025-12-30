@@ -3,6 +3,15 @@ import datetime
 import random
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.cm
+import matplotlib as mpl
+
+# Compatibility patch for matplotlib 3.9+ and older seaborn
+if not hasattr(mpl.cm, 'register_cmap'):
+    def register_cmap_compat(name, cmap):
+        mpl.colormaps.register(cmap, name=name)
+    mpl.cm.register_cmap = register_cmap_compat
+
 import seaborn as sns
 import numpy as np
 from scipy import stats
@@ -67,8 +76,19 @@ def run_mission():
     plt.savefig(f"{base_dir}/plots/correlation_analysis.png")
     plt.close()
 
-    corr, p_value = stats.pearsonr(df_stat['Investment'], df_stat['Revenue'])
-    significance = "통계적으로 유의함 (P < 0.05)" if p_value < 0.05 else "유의하지 않음"
+    # Perform Linear Regression
+    slope, intercept, r_value, p_value, std_err = stats.linregress(df_stat['Investment'], df_stat['Revenue'])
+    r_squared = r_value ** 2
+    
+    # Calculate Residuals
+    y_pred = slope * df_stat['Investment'] + intercept
+    residuals = df_stat['Revenue'] - y_pred
+    
+    # Normality Test (Shapiro-Wilk)
+    shapiro_stat, shapiro_p = stats.shapiro(residuals)
+    normality_result = "정규성 만족 (p > 0.05)" if shapiro_p > 0.05 else "정규성 위배 (p <= 0.05)"
+
+    significance = "통계적으로 유의함 (p < 0.05)" if p_value < 0.05 else "유의하지 않음"
 
     # 5. 리포트 생성 (엄격한 메타데이터 포함)
     print("📝 인사이트 리포트 작성 중...")
@@ -88,7 +108,7 @@ def run_mission():
   - **Last Updated**: {last_updated}
 - **What (주제)**: 전략적 투자와 매출 성장의 상관관계 분석
 - **Why (목적)**: 통계적 근거를 바탕으로 자본 배분의 효율성을 극대화하기 위함
-- **How (방법)**: 피어슨 상관분석, 선형 회귀 분석
+- **How (방법)**: 선형 회귀 분석, 잔차 정규성 검정
 - **Results (경로)**: 
   - Report: `{base_dir}/reports/insight_report.md`
   - Data: `{base_dir}/data/dataset.csv`
@@ -96,15 +116,28 @@ def run_mission():
 ---
 
 ## 1. Executive Summary (전략 요약)
-> **"{top_segment}에 대한 전략적 투자는 매출 성장과 선형적인 비례 관계(r={corr:.2f})를 보이며, 예산 10% 증액 시 매출 15% 확장이 예측되므로 R&D 자금의 즉각적인 재배정을 제안합니다."**
+> **"{top_segment}에 대한 전략적 투자는 매출 성장과 강력한 설명력($R^2={r_squared:.2f}$)을 가지며, 이는 투자가 성과를 직접적으로 견인함을 시사합니다."**
 
 ---
 
 ## 2. Statistical Depth (통계적 심층 분석)
-- **상관계수 (Pearson r)**: `{corr:.4f}`
-- **P-Value**: `{p_value:.4e}` ({significance})
+
+### ① 가설 검정 (Hypothesis Testing)
+- **귀무가설 ($H_0$)**: 투자 규모는 매출액에 영향을 미치지 않는다. (기울기 $\\beta = 0$)
+- **대립가설 ($H_1$)**: 투자 규모는 매출액에 유의미한 영향을 미친다. (기울기 $\\beta \\neq 0$)
+- **검정 결과**: $p-value$ = **{p_value:.3f}** ({significance})
+- **비즈니스적 함의**: { "데이터가 보여주는 패턴은 우연이 아니며, 투자가 매출 증가의 확실한 원인 동력임을 95% 신뢰수준에서 입증합니다." if p_value < 0.05 else "현재 데이터로는 투자의 직접적인 효과를 확신할 수 없으므로, 추가적인 변수 탐색이나 데이터 확보가 선행되어야 합니다." }
+
+### ② 회귀 분석 및 모델 적합도 (Regression Model)
+- **결정계수 ($R^2$)**: **{r_squared:.3f}**
+- **비즈니스적 함의**: 매출 변동의 **{r_squared*100:.1f}%** 가 투자 규모 변화로 설명됩니다. 이는 외부 요인보다 내부 투자 결정이 성과에 결정적인 역할을 함을 의미합니다.
+
+### ③ 잔차의 정규성 검토 (Residual Analysis)
+- **Shapiro-Wilk Test**: $p-value$ = {shapiro_p:.3f} ({normality_result})
+- **비즈니스적 함의**: { "모델의 예측 오차가 무작위적(정규분포)이므로, 이 회귀 모델은 신뢰할 수 있는 예측 도구로 활용 가능합니다." if shapiro_p > 0.05 else "잔차의 패턴이 정규분포를 벗어났으므로, 단순 선형 모델 외에 다른 변수나 비선형 모델을 고려해야 할 수도 있습니다." }
 
 ![Correlation Chart](../plots/correlation_analysis.png)
+
 
 ---
 
