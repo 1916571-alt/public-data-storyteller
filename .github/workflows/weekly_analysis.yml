@@ -1,9 +1,9 @@
 name: Weekly Trend Analysis
 
 on:
-  schedule:
-    # Every Monday at 9:00 AM KST (00:00 UTC)
-    - cron: '0 0 * * 1'
+  # schedule:
+  #   # Every Monday at 9:00 AM KST (00:00 UTC)
+  #   - cron: '0 0 * * 1'
   workflow_dispatch:
 
 permissions:
